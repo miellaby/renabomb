@@ -1,0 +1,127 @@
+<project>
+ <properties android_template="1" mouseTouchOrder="0" version="1.0" encryptCode="1" touchToMouse="1" version_code="1" html5_host="" retinaDisplay="0" win_org="SquishyToy Studio" win_domain="squishtoy.com" scaleMode="3" osx_bundle="com.yourdomain." assetsOnly="1" orientation="0" winrt_org="SquishyToy Studio" autorotation="0" osx_domain="giderosmobile.com" winrt_package="com.squishytoy.renabomb" windowWidth="320" ios_bundle="com.yourdomain." osx_org="GiderosMobile" osx_category="5" iosDevice="0" logicalWidth="320" app_icon_noexport="0" html5_mem="64" app_icon="schoolbag.png" mouseToTouch="1" fps="30" architecture="8" logicalHeight="480" packageName="com.squishytoy.renabomb" windowHeight="480" encryptAssets="1">
+  <imageScales/>
+  <plugins/>
+  <exports>
+   <export name="APK">
+    <property value="C:/Users/lenovo/AppData/Local/Android/sdk" name="androidPath"/>
+    <property value="19" name="androidTarget"/>
+    <property value="C:\Program Files\Android\Android Studio\lib\ant" name="antPath"/>
+    <property value="C:/Program Files/Java/jdk1.8.0_91" name="javaPath"/>
+    <property value="key1" name="keyAlias"/>
+    <property value="thybkey1ert8/" name="keyAliasPass"/>
+    <property value="C:/dev/keystore/keystore" name="keyStore"/>
+    <property value="thybkeystoreert8/" name="keyStorePass"/>
+    <property value="com.squishytoy.renabomb" name="packageName"/>
+   </export>
+  </exports>
+ </properties>
+ <file source="boss.lua"/>
+ <file source="bomb.lua"/>
+ <file source="tuto4.png"/>
+ <file source="tuto3.png"/>
+ <file source="tuto2.png"/>
+ <file source="tuto1.png"/>
+ <file source="game.lua"/>
+ <file source="MilkCocoa-21.png"/>
+ <file source="MilkCocoa-21.txt"/>
+ <file source="action.lua"/>
+ <file source="animation.lua"/>
+ <file source="arpegio.mp3"/>
+ <file source="arrow.png"/>
+ <file source="bar.png"/>
+ <file source="boing.wav"/>
+ <file source="bomb.png"/>
+ <file source="button.png"/>
+ <file source="button0.png"/>
+ <file source="caption.png"/>
+ <file source="city.png"/>
+ <file source="continue.png"/>
+ <file source="dirtf.png"/>
+ <file source="door.png"/>
+ <file source="dring.wav"/>
+ <file source="drone1.wav"/>
+ <file source="drool.png"/>
+ <file source="exit.png"/>
+ <file source="explo1.wav"/>
+ <file source="explo2.wav"/>
+ <file source="explosion.png"/>
+ <file source="frame.png"/>
+ <file source="from.png"/>
+ <file source="gui.lua"/>
+ <file source="hats.png"/>
+ <file source="hexagons.png"/>
+ <file source="init.lua"/>
+ <file source="inventory.png"/>
+ <file source="leafs.png"/>
+ <file source="level.lua"/>
+ <file source="level1.lua"/>
+ <file source="level10.lua"/>
+ <file source="level20.lua"/>
+ <file source="level30.lua"/>
+ <file source="level40.lua"/>
+ <file source="listGui.png"/>
+ <file source="liste.png"/>
+ <file source="logo.png"/>
+ <file source="macaron.png"/>
+ <file source="main.lua"/>
+ <file source="mask.png"/>
+ <file source="monsterDying.wav"/>
+ <file source="music.mp3"/>
+ <file source="options.png"/>
+ <file source="particles.lua"/>
+ <file source="prrt.wav"/>
+ <file source="recycle.png"/>
+ <file source="reddit_head.png"/>
+ <file source="rena.png"/>
+ <file source="rock.png"/>
+ <file source="scales.png"/>
+ <file source="school0.png"/>
+ <file source="school1.png"/>
+ <file source="school2.png"/>
+ <file source="school3.png"/>
+ <file source="school4.png"/>
+ <file source="schoolbag.png"/>
+ <file source="sky.png"/>
+ <file source="slap.wav"/>
+ <file source="smoke.png"/>
+ <file source="squeak.wav"/>
+ <file source="squishy.png"/>
+ <file source="star.png"/>
+ <file source="stones.png"/>
+ <file source="stretching.wav"/>
+ <file source="success-high.wav"/>
+ <file source="success-low.wav"/>
+ <file source="timer0.wav"/>
+ <file source="title.png"/>
+ <file source="trophy.png"/>
+ <file source="waitFor.lua"/>
+ <file source="zombi.lua"/>
+ <file source="zombi.png"/>
+ <file source="zombi2.png"/>
+ <dependency to="game.lua" from="init.lua"/>
+ <dependency to="animation.lua" from="init.lua"/>
+ <dependency to="main.lua" from="action.lua"/>
+ <dependency to="waitFor.lua" from="action.lua"/>
+ <dependency to="animation.lua" from="bomb.lua"/>
+ <dependency to="zombi.lua" from="boss.lua"/>
+ <dependency to="waitFor.lua" from="game.lua"/>
+ <dependency to="animation.lua" from="gui.lua"/>
+ <dependency to="boss.lua" from="level.lua"/>
+ <dependency to="init.lua" from="level.lua"/>
+ <dependency to="level40.lua" from="level.lua"/>
+ <dependency to="zombi.lua" from="level.lua"/>
+ <dependency to="level1.lua" from="level10.lua"/>
+ <dependency to="level10.lua" from="level20.lua"/>
+ <dependency to="level20.lua" from="level30.lua"/>
+ <dependency to="level30.lua" from="level40.lua"/>
+ <dependency to="init.lua" from="particles.lua"/>
+ <dependency to="boss.lua" from="main.lua"/>
+ <dependency to="bomb.lua" from="main.lua"/>
+ <dependency to="animation.lua" from="main.lua"/>
+ <dependency to="gui.lua" from="main.lua"/>
+ <dependency to="init.lua" from="main.lua"/>
+ <dependency to="level.lua" from="main.lua"/>
+ <dependency to="particles.lua" from="main.lua"/>
+ <dependency to="waitFor.lua" from="main.lua"/>
+</project>
