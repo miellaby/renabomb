@@ -1,2 +1,3 @@
 # renabomb
-Gideros Mobile Game Source Code
+"Renabomb Vengeance" Game https://squishytoy.itch.io/renabomb-vengeance Source Code for Gideros Mobile
+http://giderosmobile.com/
