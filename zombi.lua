@@ -33,7 +33,7 @@ function Zombi:onHit(damage, d, a)
 	else
 		self:setState(state.dying)
 		_ = self.hat and table.insert(trophies, self.hat.iHat)
-		if not achievements.allTrophy and #trophies == hatCount  then
+		if not achievements.allTrophies and #trophies == hatCount then
 			achievement("All", "trophies!")
 			achievements.allTrophies = true
 		end

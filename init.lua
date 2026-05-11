@@ -1,4 +1,3 @@
-require("bit")
 local i
 
 stageW = 320
@@ -367,16 +366,16 @@ local stupidCrc = function(s)
   local i
   for i = 1, #s do
     local b = s:byte(i)
-    crc = bit.bxor(b + b * 256, crc)
+	crc = (b + b * 256) ~ crc
 	crc = crc * 64 + crc * 4
   end
-  return bit.band(bit.bxor(crc, 1070750871), 0x7FFFFFFF)
+  return (crc ~ 1070750871) & 0x7FFFFFFF
 end
 
 if save.rh ~= nil and save.sh ~= nil then
    -- old format
-    if not (bit.bxor(save.rh, 1070750871) == save.record 
-        and bit.bxor(save.sh, 1070750871) == save.score) then
+	if not ((save.rh ~ 1070750871) == save.record
+		and (save.sh ~ 1070750871) == save.score) then
 		save = {}
 	end
 else

@@ -1362,6 +1362,10 @@ function splashScreen()
 	squishy.gravity = 0
 	squishy:setSpeed(0, 0)
 	waitFor.seconds(0.3)
+	drool:setSpeed(0, 0)
+	_= soundOn and sound('squeak'):stop()
+	_= soundOn and sound('prrt'):stop()
+	waitFor.signal(Event.MOUSE_DOWN)
 	squishy:stop()
 	drool:stop()
 	splash:setFading(0, 1, -0.1)
@@ -1377,7 +1381,9 @@ function main()
 				     or state.intro))
 
     if game.state == state.intro then
+		game:setState(state.beginning)
 		splashScreen()
+		game:setState(state.intro)
 	end
 	splash = nil
 
@@ -1396,8 +1402,9 @@ function main()
 
 	waitFor.seconds(0)
 	while game.running do
-
-		if game.state == state.intro then
+		if game.state == state.beginning then
+			waitFor.seconds(0.1)
+		elseif game.state == state.intro then
 			retryCounter = 0
 			setGuiState(state.intro)
 			intro()

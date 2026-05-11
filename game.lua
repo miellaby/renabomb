@@ -15,7 +15,8 @@ state = {
 	dying = {label = 'dying'},
 	dead = {label = 'dead'},
 	
-	-- game super states	
+	-- game super states
+	beginning = { label = 'beginning' },
 	intro = {label = 'intro'},
 	tuto = {label = 'tuto'},
 	ingame = {label = 'ingame'},

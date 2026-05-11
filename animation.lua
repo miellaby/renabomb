@@ -1,4 +1,4 @@
-require "box2d"
+require "liquidfun"
 Body = Core.class(Sprite)
 BitmapBody = Core.class(Bitmap)
 function Body:init()
