@@ -83,6 +83,7 @@ end
 function setRunMode(onOff)	
 	if maxLevel < 20 then
 		runMode = false
+		recycleB.txtRetry:setAlpha(0)
 		runModeB:setColorTransform(0.4, 0.3, 0.3, 1)
 	else
 		runMode = onOff
@@ -92,6 +93,7 @@ function setRunMode(onOff)
 		runModeStateTxt:setText(runMode and "ON ! ! !" or " off")
 		runModeStateTxt:setTextColor(runMode and 0xff0000 or 0x332222)
 		runModeStateTxt:setPosition(runModeStateTxt:getWidth() * -0.5, 3 * runModeStateTxt:getHeight())
+		recycleB.txtRetry:setAlpha(runMode and 1 or 0)
 	end
 	
 	if withAd then
@@ -754,12 +756,12 @@ function showTrophy()
 		{id="first40", label="40/40", caption1="Win 40", caption2="levels"},
 		{id="first50", label="50/50", caption1="Win 50", caption2="levels"},
 		{id="gameEnd", label="King", caption1="Beat", caption2="King Z"},
-		{id="allTrophy", label="Trophies", caption1="get back", caption2="all hats"},
+		{id="allTrophies", label="Trophies", caption1="get back", caption2="all hats"},
 		{id="run26", label="run 26", caption1="Run 26", caption2="levels"}, 
 		{id="run42", label="run 42", caption1="Run 42", caption2="levels"},
 		{id="runningFinished", label="Finish", caption1="Run to", caption2="the Finish"},
 		{id="perfectWin", label="Perfect", caption1="Finish with", caption2="all hats"},
-		{id="incredibleWin", label="Incredible", caption1="Finish in", caption2="3 retry"}
+		{id="incredibleWin", label="Incredible", caption1="Finish in", caption2="50 retries"}
 	}
 	local i
 	local missing = 0
@@ -1109,6 +1111,10 @@ function successScene()
 		maxLevel = level.i + 1
 	end
 
+	if level and runMode and runMaxLevel <= level.i then
+		runMaxLevel = level.i + 1
+	end
+
 	if not achievements.runningUnlocked and maxLevel >= 21 then
 		achievements.runningUnlocked = true
 		achievement("running", "unlocked!")
@@ -1135,12 +1141,12 @@ function successScene()
 		achievement("50/50", "success")
 	end
 
-	if not achievements.run26 and runMode and maxLevel >= 27 then
+	if not achievements.run26 and runMode and runMaxLevel >= 27 then
 		achievements.run26 = true
 		achievement("run 26", "success")
 	end
 
-	if not achievements.run42 and runMode and maxLevel >= 43 then
+	if not achievements.run42 and runMode and runMaxLevel >= 43 then
 		achievements.run42 = true
 		achievement("run 42", "success")
 	end
@@ -1517,7 +1523,7 @@ function main()
 					achievements.perfectWin = true
 					achievement("Perfect", "Success!")
 				end
-				if totalRetry <= 3 then
+				if totalRetry <= 50 then
 					achievements.incredibleWin = true
 					achievement("Incredible", "Success!")
 					Caption.new(stageW * 0.75, stageH * 0.75, stageW * 0.75, stageH * 0.75, (totalRetry == 0 and "never failed" or ("" .. totalRetry .. " retry")), totalRetry == 0 and "failed" or "only")
@@ -1551,6 +1557,7 @@ function main()
 			game:setState(state.ingame)
 			retryCounter = retryCounter + 1
 			totalRetry = totalRetry + 1
+			recycleB.txtRetry:setText(string.format("%d", totalRetry))
 			if not runMode and withAd and game.iLevel > 3 then
 				adIsVisible = true
 				admob.setVisible(true)

@@ -42,7 +42,7 @@ gui = Sprite.new()
 stage:addChild(gui)
 
 -- score and the like
-ammo, score, rh, scoreCounter, record, runModeRecord, lastScore, maxLevel = 0, 0, 0, 0, 0, 0, 0, 1
+ammo, score, rh, scoreCounter, record, runModeRecord, lastScore, maxLevel, runMaxLevel = 0, 0, 0, 0, 0, 0, 0, 1, 1
 lowend, remainingTime, prolongation, lastRemainingTime, retryCounter, totalRetry = 0, 0, 0, 0, 0, 0
 runMode = false
 trophies, lastTrophies = {}, {}
@@ -406,6 +406,7 @@ lastRemainingTime = remainingTime
 soundOn = soundMode == 0 or soundMode == 1
 musicOn = soundMode == 0
 maxLevel = save.maxLevel or save.iLevel or 1
+runMaxLevel = save.runMaxLevel or 1
 -- print("runMode", runMode)
 
 function saveMe()
@@ -432,6 +433,7 @@ function saveMe()
 					or "intro")
 	save.soundMode = soundMode
 	save.runMode = runMode
+	save.runMaxLevel = runMaxLevel
 	save.maxLevel = maxLevel
 	local j = json.encode({
 		h=stupidCrc(json.encode(json.decode(json.encode(save)))),
