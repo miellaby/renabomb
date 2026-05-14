@@ -475,6 +475,7 @@ function intro()
 					record = 0
 					runModeRecord = 0
 					maxLevel = 1
+					runMaxLevel = 1
 					achievements = {}
 				else
 					application:openUrl("http://www.reddit.com/r/renabomb/submit?url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.squishytoy.renabomb&title=got%20score%20" .. record .. "%20playing%20Renabomb%20Vengeance")
@@ -488,6 +489,7 @@ function intro()
 		game.iLevel = firstLevel ~= 0 and firstLevel or 1
 		score = 0
 		totalRetry = 0
+		recycleB.txtRetry:setText(" ")
 		trophies = {}
 		remainingTime = firstLevel == 0 and 60 * 10 or 60 * 60
 		prolongation = remainingTime
@@ -1558,6 +1560,7 @@ function main()
 			retryCounter = retryCounter + 1
 			totalRetry = totalRetry + 1
 			recycleB.txtRetry:setText(string.format("%d", totalRetry))
+			recycleB.txtRetry:setAnchorPoint(0.5, 0.5)
 			if not runMode and withAd and game.iLevel > 3 then
 				adIsVisible = true
 				admob.setVisible(true)

@@ -17,7 +17,7 @@ recycleB:setAlpha(0.6)
 recycleB.acceleration = -0.02
 recycleB.floating = true
 
-recycleB.txtRetry = TextField.new(font1, "0")
+recycleB.txtRetry = TextField.new(font1, " ")
 recycleB.txtRetry:setAnchorPoint(0.5, 0.5)
 recycleB.txtRetry:setTextColor(0xFFFFFF)
 recycleB.txtRetry:setPosition(0, 15)
