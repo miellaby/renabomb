@@ -270,7 +270,7 @@ levels[#levels + 1]=[[
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
 
  <g>
-  <title>Messy mess</title>
+  <title>ammo=20,Messy mess</title>
   <rect stroke="#000000" fill="#000000" x="109.99336" y="151.34926" width="108.13183" height="44.28529" id="svg_7"/>
   <rect id="svg_11" fill="#7fff00"  x="164.41592" y="377.91626" width="43.5" height="58.5" stroke="#000000"/>
   <rect transform="rotate(90, -2.91797, 321.086)" stroke="#000000" fill="#000000" x="-48.91771" y="310.08539" width="92" height="22" id="svg_23"/>
